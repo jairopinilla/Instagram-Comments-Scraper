@@ -1,9 +1,14 @@
 from selenium import webdriver
 import time
 import sys
+import os.path
 
-driver = webdriver.Chrome()
-driver.get(sys.argv[1])
+
+pathcurrent = os.getcwd()
+pathcurrent = pathcurrent + '\\chromedriver.exe'
+
+driver = webdriver.Chrome(pathcurrent)
+#driver.get(sys.argv[1])
 time.sleep(3)
 
 #if user not logined
