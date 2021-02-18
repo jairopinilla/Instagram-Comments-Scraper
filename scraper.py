@@ -8,8 +8,25 @@ pathcurrent = os.getcwd()
 pathcurrent = pathcurrent + '\\chromedriver.exe'
 
 driver = webdriver.Chrome(pathcurrent)
-#driver.get(sys.argv[1])
-time.sleep(3)
+
+######################################
+username = "rukadata"
+password = "flacavonoteni30"
+
+driver.get("https://www.instagram.com/accounts/login/")
+time.sleep(4)
+
+driver.find_element_by_xpath("//input[@name='username']").send_keys(username)
+time.sleep(1)
+driver.find_element_by_xpath("//input[@name='password']").send_keys(password)
+time.sleep(2)
+driver.find_element_by_xpath("//button[contains(.,'Iniciar sesión')]").click()
+
+time.sleep(4)
+##########################################
+
+driver.get(sys.argv[1])
+time.sleep(4)
 
 #if user not logined
 try:
